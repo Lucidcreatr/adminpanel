@@ -1,34 +1,36 @@
--- Eğer tanımı aşağıdaki gibi bırakacaksan:
-local Maintab = Window:CreateTab("Admin Panel", 4483362458)
+loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 
--- Slider çağrısını da şu şekilde değiştir:
-Maintab:CreateSlider({
-    Name = "Speed Ayarı",
-    Range = {16, 200},
-    Increment = 1,
-    Suffix = "Speed",
-    CurrentValue = 16,
-    Callback = function(value)
-        local player = game.Players.LocalPlayer
-        local char = player.Character or player.CharacterAdded:Wait()
-        local humanoid = char:WaitForChild("Humanoid")
-        humanoid.WalkSpeed = value
-    end
+local Window = Rayfield:CreateWindow({
+	Name = "LCX TEAM - ADMİN PANEL",
+	LoadingTitle = "Draconis Studio",
+	LoadingSubtitle = "Lucid ve Draconis Studio tarafından",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = "AdminPanel",
+		FileName = "AdminGUI",
+		
+	},
+	Discord ={
+		Enabled = false,
+		
+	},
+	KeySystem = false,
+
 })
--- Eğer tanımı aşağıdaki gibi bırakacaksan:
+
+-- MAİN TAB --
 local Maintab = Window:CreateTab("Admin Panel", 4483362458)
 
--- Slider çağrısını da şu şekilde değiştir:
 Maintab:CreateSlider({
-    Name = "Speed Ayarı",
-    Range = {16, 200},
-    Increment = 1,
-    Suffix = "Speed",
-    CurrentValue = 16,
-    Callback = function(value)
-        local player = game.Players.LocalPlayer
-        local char = player.Character or player.CharacterAdded:Wait()
-        local humanoid = char:WaitForChild("Humanoid")
-        humanoid.WalkSpeed = value
-    end
+	Name = "Speed Ayarı",
+	Range = {16, 200},
+	Increment = 1,
+	Suffix = "Speed",
+	CurrentValue = 16,
+	Callback = function(value)
+		local player = game.Players.LocalPlayer
+		local char = player.Character or player.CharacterAdded:Wait()
+		local humanoid = char:WaitForChild("Humanoid")
+		humanoid.WalkSpeed = value
+	end
 })
